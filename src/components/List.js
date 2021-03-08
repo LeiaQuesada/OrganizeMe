@@ -26,7 +26,7 @@ class ToDoList extends Component {
         <div>
           <form onSubmit={this.handleFormSubmit}>
             <div>
-              <label htmlFor="toDoNext">What To Do Next?</label>
+              <label htmlFor="toDoNext">What do we want to work on?</label>
               <input
                 value={addFormValue}
                 onChange={this.handleInputChange}
