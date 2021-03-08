@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-
-import {completeTodo} from '../actions';
+import {completeToDo} from '../actions';
 
 class ListItem extends Component {
-  handleComplete = completeTodo => {
-    const {completeTodo} = this.props;
-    completeTodo(completeTodo);
+  handleComplete = completeToDoId => {
+    const {completeToDo} = this.props;
+    completeToDo(completeToDoId);
   };
   render() {
     const{todoId, todo} = this.props;
     return (
       <div key="toDoName">
         <h4>
-            {todo.title}
             <span onClick={() => this.handleComplete(todoId)}>
-                <i>Done</i>
+            {todo.title}
             </span>
         </h4>
       </div>
     );
   };
 }
-export default connect(null, {completeTodo})(ListItem);
+export default connect(null, {completeToDo})(ListItem);
